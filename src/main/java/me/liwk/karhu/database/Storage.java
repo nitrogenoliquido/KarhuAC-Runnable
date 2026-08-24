@@ -38,8 +38,6 @@ public interface Storage {
     List<BanX> getRecentBans();
 
 
-    void checkFiles();
-
     void setAlerts(String uuid, int status);
 
     boolean getAlerts(String uuid);

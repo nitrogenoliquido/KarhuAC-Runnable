@@ -176,7 +176,7 @@ public final class Karhu extends JavaPlugin {
                         + File.separator
         );
 
-        if (libs.mkdir()) {
+        if (libs.mkdirs()) {
             printCool(ChatColor.GREEN + "Folder "
                     + libs.getAbsolutePath() + " created!");
         } else {
@@ -301,7 +301,6 @@ public final class Karhu extends JavaPlugin {
         }
 
         storage.init();
-        storage.checkFiles();
 
         /*
          * Chunk loading

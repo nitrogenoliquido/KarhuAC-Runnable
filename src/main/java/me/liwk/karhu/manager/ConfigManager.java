@@ -37,7 +37,7 @@ public final class ConfigManager {
     
     private String defaultVersion;
     
-    private String license, pullbackMode;
+    private String pullbackMode;
     private int bungeePostRate;
     private long alertDelay = 0L;
     private String name, serverName;
@@ -123,12 +123,6 @@ public final class ConfigManager {
         }
 
         this.config = YamlConfiguration.loadConfiguration(this.configFile);
-
-        this.license = this.config.getString("license-key");
-
-        if (!this.config.isSet("version-to-download")) {
-            this.config.set("version-to-download", "autoupdate");
-        }
 
         if (!this.config.isSet("Prefix")) {
             this.config.set("Prefix", "&7[&b&l❀&7] ");
@@ -671,8 +665,6 @@ public final class ConfigManager {
 
         this.exemptTicksJoin = this.config.getInt("join-exempt-ticks");
 
-        String acname = license.equals("8C1A3-CD7E3-09F8B-DAC6C-CD4AA") ? "VengeanceLoader" : "KarhuLoader";
-
         save();
     }
 
@@ -807,4 +799,3 @@ public final class ConfigManager {
     }
 
 }
-

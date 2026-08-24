@@ -473,9 +473,9 @@ public abstract class Check<T> {
                     discord.execute();
                 } catch (IOException ex) {
                     if (ex.toString().contains("429")) {
-                        karhu.getPlug().getLogger().warning("Unable to post discord webhook: 429 Too many requests");
+                        karhu.getLogger().warning("Unable to post discord webhook: 429 Too many requests");
                     } else if (!ex.getMessage().contains("no protocol")) {
-                        karhu.getPlug().getLogger().warning("Unable to post discord webhook: " + ex.getMessage());
+                        karhu.getLogger().warning("Unable to post discord webhook: " + ex.getMessage());
                     }
                 }
             }
@@ -518,9 +518,9 @@ public abstract class Check<T> {
                     discord.execute();
                 } catch (IOException ex) {
                     if (ex.toString().contains("429")) {
-                        karhu.getPlug().getLogger().warning("Unable to post discord webhook: 429 Too many requests");
+                        karhu.getLogger().warning("Unable to post discord webhook: 429 Too many requests");
                     } else if (!ex.getMessage().contains("no protocol")) {
-                        karhu.getPlug().getLogger().warning("Unable to post discord webhook: " + ex.getMessage());
+                        karhu.getLogger().warning("Unable to post discord webhook: " + ex.getMessage());
                     }
                 }
             }
@@ -876,4 +876,3 @@ public abstract class Check<T> {
         return !data.isHasDig() && !data.isPlacing() && !data.isUsingItem() && !data.isSpectating();
     }
 }
-

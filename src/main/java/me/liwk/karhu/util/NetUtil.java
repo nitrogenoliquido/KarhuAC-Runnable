@@ -15,22 +15,6 @@ public class NetUtil {
         out.getChannel().transferFrom(Channels.newChannel(new URL(from).openStream()), 0L, Long.MAX_VALUE);
     }
 
-    /*public static void injectURL(File file, URL url) {
-        try {
-
-            URLClassLoader systemClassLoader = (URLClassLoader) injectorClassLoader;
-
-            try {
-                JarLoader.addToClassPath(file);
-            } catch (Throwable t) {
-                t.printStackTrace();
-            }
-
-        } catch (Exception ignore) { }
-    }*/
-
-
-    
     public static void close(AutoCloseable... closeables) {
         try {
             for (AutoCloseable closeable : closeables) if (closeable != null) closeable.close();

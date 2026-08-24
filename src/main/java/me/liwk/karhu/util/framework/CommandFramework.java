@@ -13,7 +13,6 @@ import org.bukkit.help.HelpTopic;
 import org.bukkit.help.HelpTopicComparator;
 import org.bukkit.help.IndexHelpTopic;
 import org.bukkit.plugin.SimplePluginManager;
-import org.spigotmc.SpigotConfig;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -74,7 +73,10 @@ public class CommandFramework implements CommandExecutor {
                     Player player = (Player) sender;
                     if (!player.hasPermission("karhu.staff") && !player.isOp() && !AlertsManager.ADMINS.contains(player.getUniqueId())) {
                         if(cmdLabel.equalsIgnoreCase("karhu")) {
-                            sender.sendMessage(SpigotConfig.unknownCommandMessage);
+                            sender.sendMessage(Bukkit.spigot().getConfig().getString(
+                                    "messages.unknown-command",
+                                    "Unknown command. Type \"/help\" for help."
+                            ));
                         } else {
                             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Karhu.getInstance().getConfigManager().getNoPermission()));
                         }
@@ -187,4 +189,3 @@ public class CommandFramework implements CommandExecutor {
         return directoryToBeDeleted.delete();
     }
 }
-

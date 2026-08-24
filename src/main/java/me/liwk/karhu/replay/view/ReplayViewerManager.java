@@ -1,6 +1,5 @@
 package me.liwk.karhu.replay.view;
 
-import ac.karhu.karhuloader.KarhuLoader;
 import com.github.retrooper.packetevents.wrapper.play.server.*;
 import me.liwk.karhu.Karhu;
 import me.liwk.karhu.replay.data.state.*;
@@ -16,11 +15,11 @@ import java.util.*;
 
 public class ReplayViewerManager {
 
-    private final KarhuLoader plugin;
+    private final Karhu plugin;
     private final Map<UUID, ReplayViewer> activeViewers;
 
     public ReplayViewerManager(Karhu plugin) {
-        this.plugin = plugin.getPlug();
+        this.plugin = plugin;
         this.activeViewers = new ConcurrentHashMap<>();
     }
 
@@ -57,5 +56,4 @@ public class ReplayViewerManager {
         activeViewers.clear();
     }
 }
-
 

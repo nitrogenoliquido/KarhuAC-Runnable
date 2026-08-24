@@ -1,6 +1,5 @@
 package me.liwk.karhu.replay.view;
 
-import ac.karhu.karhuloader.KarhuLoader;
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.manager.server.ServerVersion;
 import com.github.retrooper.packetevents.protocol.nbt.*;
@@ -13,6 +12,7 @@ import com.github.retrooper.packetevents.util.Vector3d;
 import com.github.retrooper.packetevents.util.Vector3i;
 import com.github.retrooper.packetevents.wrapper.play.server.*;
 import me.liwk.karhu.replay.data.entity.DestroyEntitiesData;
+import me.liwk.karhu.Karhu;
 import me.liwk.karhu.replay.data.entity.InitialEntityData;
 import me.liwk.karhu.replay.data.entity.SpawnEntityData;
 import me.liwk.karhu.replay.data.entity.TileEntityData;
@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 // Individual Replay Viewer
 public class ReplayViewer {
 
-    private final KarhuLoader plugin;
+    private final Karhu plugin;
     private final Player viewer;
     private final ReplaySession replay;
     private final List<ReplayPacket> packets;
@@ -58,7 +58,7 @@ public class ReplayViewer {
     private final Set<String> sentChunks = new HashSet<>(); // Track chunks sent to viewer
     private ServerVersion serverVersion = null;
 
-    public ReplayViewer(KarhuLoader plugin, Player viewer, ReplaySession replay) {
+    public ReplayViewer(Karhu plugin, Player viewer, ReplaySession replay) {
         this.plugin = plugin;
         this.viewer = viewer;
         this.replay = replay;

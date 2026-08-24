@@ -1,6 +1,5 @@
 package me.liwk.karhu.replay.storage;
 
-import ac.karhu.karhuloader.KarhuLoader;
 import com.github.retrooper.packetevents.protocol.world.chunk.BaseChunk;
 import com.github.retrooper.packetevents.protocol.world.chunk.Column;
 import com.github.retrooper.packetevents.protocol.world.chunk.TileEntity;
@@ -18,12 +17,12 @@ import java.util.stream.Collectors;
 
 public class ReplayStorage {
 
-    private final KarhuLoader plugin;
+    private final Karhu plugin;
     private final Path replaysDirectory;
     private final Gson gson;
 
     public ReplayStorage(Karhu plugin) {
-        this.plugin = plugin.getPlug();
+        this.plugin = plugin;
         this.replaysDirectory = this.plugin.getDataFolder().toPath().resolve("replays");
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -110,4 +109,3 @@ public class ReplayStorage {
 }
 
 //TODO
-

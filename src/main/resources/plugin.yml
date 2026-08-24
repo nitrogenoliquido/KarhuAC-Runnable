@@ -2,7 +2,7 @@ name: KarhuAC
 version: ${project.version}
 main: me.liwk.karhu.Karhu
 api-version: 1.13
-softdepend: [Viaversion, ProtocolLib, ProtocolSupport]
+softdepend: [KarhuAPI, ViaVersion, ProtocolLib, ProtocolSupport, floodgate]
 authors: [LIWK, Shanape, Mexican]
 description: Karhu recode, best bang for da buck
 website: www.karhu.cc
