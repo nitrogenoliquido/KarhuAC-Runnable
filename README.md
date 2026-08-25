@@ -1,1 +1,1 @@
-karhu runnable and buildable without loader
+(OUTDATED) karhu runnable and buildable without loader
